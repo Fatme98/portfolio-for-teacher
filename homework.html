@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Изпрати домашно или задай въпрос</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <p class="brand">Портфолио</p>
+        <ul class="nav-links">
+          <li><a class="nav-link" href="index.html">Начало</a></li>
+          <li><a class="nav-link" href="about.html">За мен</a></li>
+          <li><a class="nav-link" href="lessons.html">Моите Уроци</a></li>
+          <li><a class="nav-link" href="projects.html">Проекти</a></li>
+          <li><a class="nav-link" href="apps.html">Приложения</a></li>
+          <li><a class="nav-link" href="schedule.html">Годишни разпределения</a></li>
+          <li><a class="nav-link active" href="homework.html">Изпрати домашно или задай въпрос</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="page-shell">
+      <section class="hero">
+        <div> 
+          <h1>Форма за изпращане на домашна работа или задаване на въпрос към мен</h1>
+        </div>
+      </section>
+
+      <section class="form-card card">
+        <form
+          id="homeworkForm"
+          class="homework-form"
+          action="https://formsubmit.co/vahide.osman@abv.bg"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <input type="hidden" name="_subject" value="Ново домашно или въпрос от ученик" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="http://127.0.0.1:3000/thank-you.html" />
+
+          <label>
+            Име на ученика
+            <input type="text" name="studentName" required />
+          </label>
+
+          <label>
+            Клас
+            <input type="text" name="studentClass" required />
+          </label>
+
+          <label>
+            Тема / тема на домашното
+            <input type="text" name="topic" required />
+          </label>
+
+          <label>
+            Въпрос или коментар
+            <textarea name="question" rows="5" required></textarea>
+          </label>
+
+          <label>
+            Прикачи снимка или файл
+            <input type="file" name="attachment" accept="image/*,.pdf,.doc,.docx,.txt" />
+          </label>
+
+          <button type="submit" class="submit-btn">Изпрати</button>
+        </form>
+      </section>
+    </main>
+
+  </body>
+</html>
